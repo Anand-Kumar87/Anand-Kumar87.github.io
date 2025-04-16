@@ -1,6 +1,6 @@
 # Professional Login System with Backend Integration
 
-# [Follow me on Instagram] (https://www.instagram.com/anand_bab444/}
+ [Follow me on Instagram] (https://www.instagram.com/anand_bab444/}
 
 A secure, modern login system with Gmail address validation, password strength requirements, and database integration. This system provides both frontend and backend components for a complete authentication solution.
 
