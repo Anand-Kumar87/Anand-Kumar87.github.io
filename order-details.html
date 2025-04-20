@@ -381,7 +381,8 @@
       }
       
       // Show order not found message if no order data
-      if (!orderData) {
+      if (!orderData.shipping || !orderData.payment) {
+          console.error('Shipping or Payment data is missing.');
         document.getElementById('order-details').classList.add('hidden');
         document.getElementById('order-not-found').classList.remove('hidden');
         return;
@@ -417,7 +418,7 @@
       
       // Fill shipping details
       document.getElementById('shipping-name').textContent = 
-        `${orderData.shipping.firstName} ${orderData.shipping.lastName}`;
+        `${orderData.shipping?.firstName || 'N/A'} ${orderData.shipping?.lastName || 'N/A'}`;
       document.getElementById('shipping-email').textContent = orderData.shipping.email;
       document.getElementById('shipping-phone').textContent = orderData.shipping.phone;
       document.getElementById('shipping-address').textContent = orderData.shipping.address;
@@ -433,7 +434,7 @@
         'bank-transfer': 'Bank Transfer'
       };
       document.getElementById('payment-method').textContent = 
-        paymentMethodNames[orderData.payment.method] || orderData.payment.method;
+        paymentMethodNames[orderData.payment?.method] || orderData.payment.method;
       
       // Fill order summary
       document.getElementById('summary-subtotal').textContent = formatCurrency(orderData.totals.subtotal);
