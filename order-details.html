@@ -417,16 +417,15 @@ document.addEventListener('DOMContentLoaded', function() {
     `Estimated delivery by ${deliveryDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}`;
 
   // Fill shipping details
-  const shipping = orderData.shipping || {};
-  document.getElementById('shipping-name').textContent = `${shipping.firstName || 'N/A'} ${shipping.lastName || ''}`;
-  document.getElementById('shipping-email').textContent = shipping.email || 'N/A';
-  document.getElementById('shipping-phone').textContent = shipping.phone || 'N/A';
-  document.getElementById('shipping-address').textContent = shipping.address || 'N/A';
-  document.getElementById('shipping-city').textContent = shipping.city || 'N/A';
-  document.getElementById('shipping-postal').textContent = shipping.postalCode || 'N/A';
-  document.getElementById('shipping-state').textContent = shipping.state || 'N/A';
-  document.getElementById('shipping-country').textContent = shipping.country || 'N/A';
-
+    const shipping = orderData.shipping || {};
+    document.getElementById('shipping-name').textContent = `${shipping.firstName || 'N/A'} ${shipping.lastName || ''}`;
+    document.getElementById('shipping-email').textContent = shipping.email || 'N/A';
+    document.getElementById('shipping-phone').textContent = shipping.phone || 'N/A';
+    document.getElementById('shipping-address').textContent = shipping.address || 'N/A';
+    document.getElementById('shipping-city').textContent = shipping.city || 'N/A';
+    document.getElementById('shipping-postal').textContent = shipping.postalCode || 'N/A';
+    document.getElementById('shipping-state').textContent = shipping.state || 'N/A';
+    document.getElementById('shipping-country').textContent = shipping.country || 'N/A';
   // Format payment method
   const paymentMethodNames = {
     'credit-card': 'Credit Card',
