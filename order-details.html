@@ -418,7 +418,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Fill shipping details
     // Shipping details ko alag properties se fill karne ke liye
-    const shipping = orderData.shipping || {};
+         const shipping = orderData.shipping || {};
+    console.log('Shipping Details:', shipping);
+    
     document.getElementById('shipping-name').textContent = `${shipping.firstName || 'N/A'} ${shipping.lastName || ''}`;
     document.getElementById('shipping-email').textContent = shipping.email || 'N/A';
     document.getElementById('shipping-phone').textContent = shipping.phone || 'N/A';
