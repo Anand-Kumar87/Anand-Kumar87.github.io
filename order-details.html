@@ -417,6 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `Estimated delivery by ${deliveryDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}`;
 
   // Fill shipping details
+    // Shipping details ko alag properties se fill karne ke liye
     const shipping = orderData.shipping || {};
     document.getElementById('shipping-name').textContent = `${shipping.firstName || 'N/A'} ${shipping.lastName || ''}`;
     document.getElementById('shipping-email').textContent = shipping.email || 'N/A';
